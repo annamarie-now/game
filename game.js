@@ -3,30 +3,41 @@ class Game {
     this.player = new Player();
     this.minus = [];
     this.plus = [];
+    this.background = new Background();
   }
 
   setup() {
-    for (let i = 0; i <= 20; i++) {
+    this.background.setup();
+    for (let i = 0; i <= 15; i++) {
       this.minus.push(new Minus(Math.random() * WIDTH, Math.random() * HEIGHT));
     }
 
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 35; i++) {
       this.plus.push(new Plus(Math.random() * WIDTH, Math.random() * HEIGHT));
     }
   }
 
   draw() {
+    this.background.draw();
     this.player.draw();
-    this.minus.forEach(minus => {
+    this.minus.forEach((minus, i) => {
       minus.draw();
       if (this.collisionCheck(minus, this.player)) {
-        this.player.height-- && this.player.width--;
+        this.minus.splice(i, 1);
+        this.player.height -= 7;
+        this.player.width -= 7;
+        this.minus.push(
+          new Minus(Math.random() * WIDTH, Math.random() * HEIGHT)
+        );
       }
     });
-    this.plus.forEach(plus => {
+    this.plus.forEach((plus, i) => {
       plus.draw();
       if (this.collisionCheck(plus, this.player)) {
-        this.player.height++ && this.player.width++;
+        this.plus.splice(i, 1);
+        this.player.height += 10;
+        this.player.width += 10;
+        this.plus.push(new Plus(Math.random() * WIDTH, Math.random() * HEIGHT));
       }
     });
   }

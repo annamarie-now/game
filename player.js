@@ -5,8 +5,8 @@ class Player {
     this.velocity = 4;
     this.radius = 5;
     this.speed = 1;
-    this.width = 10;
-    this.height = 10;
+    this.width = 15;
+    this.height = 15;
   }
 
   draw() {

@@ -1,2 +1,2 @@
-const WIDTH = window.innerWidth;
-const HEIGHT = window.innerHeight;
+const WIDTH = 720;
+const HEIGHT = 576;

@@ -1,4 +1,4 @@
-const randomPosition = [Math.random() * WIDTH, Math.random() * HEIGHT];
+//const randomPosition = [Math.random() * WIDTH, Math.random() * HEIGHT];
 
 //  shapes.push(.minus);
 
