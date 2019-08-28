@@ -7,10 +7,10 @@
 //   listOfShapes.push(new Minus(this.x, this.y));
 // }
 
-function draw() {
-  clear();
-  listOfMinus.forEach(x => {
-    x.create();
-    x.collisionCheck(listOfMinus);
-  });
-}
+// function draw() {
+//   clear();
+//   listOfMinus.forEach(x => {
+//     x.create();
+//     x.collisionCheck(listOfMinus);
+//   });
+// }

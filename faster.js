@@ -1,31 +1,26 @@
-class Plus {
+class Faster {
   constructor(randomX, randomY) {
     this.y = randomY;
     this.x = randomX;
     this.width = 15;
     this.height = 15;
-    this.randX = random(2.5, -2.5);
-    this.randY = random(2.5, -2.5);
+    this.randX = random(2, -2);
+    this.randY = random(2, -2);
   }
-
-  //   setup() {
-  //     this.plusImg = loadimage("/assets/drink_me.png");}
-
   draw() {
     fill(255);
-    rect(this.x, this.y, 15, 5);
-    rect(this.x + 5, this.y - 5, 5, 15);
-    fill(255);
+    triangle(this.x, this.y, this.x + 10, this.y + 15, this.x + 20, this.y);
+    //(10, 30, 19, 15, 30, 30);
+
     noStroke();
     this.move();
     this.wallCollision();
-    // image(this.plusImg, this.x, this.y);
   }
   move = () => {
     /*   if (frameCount % 120 === 0) {
-      this.randomX = random(0.4, -0.4);
-      this.randomY = random(0.4, -0.4);
-    } */
+        this.randomX = random(0.4, -0.4);
+        this.randomY = random(0.4, -0.4);
+      } */
 
     this.x += this.randX;
     this.y += this.randY;

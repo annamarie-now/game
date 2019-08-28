@@ -4,8 +4,8 @@ class Minus {
     this.x = randomX;
     this.width = 15;
     this.height = 5;
-    this.randX = random(4, -4);
-    this.randY = random(4, -4);
+    this.randX = random(2.5, -2.5);
+    this.randY = random(2.5, -2.5);
   }
   draw() {
     fill(255);
@@ -28,13 +28,13 @@ class Minus {
     if (this.x < 0) {
       this.randX *= -1;
     }
-    if (this.x > WIDTH) {
+    if (this.x > WIDTH - this.width) {
       this.randX += -1;
     }
     if (this.y < 0) {
       this.randY *= -1;
     }
-    if (this.y > HEIGHT) {
+    if (this.y > HEIGHT - this.height) {
       this.randY *= -1;
     }
   }

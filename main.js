@@ -1,27 +1,29 @@
 const game = new Game();
-// const WIDTH = window.innerWidth;
-// const HEIGHT = window.innerHeight;
+let goal = new Goal();
 
 function setup() {
   createCanvas(WIDTH, HEIGHT);
   game.setup();
+  angleMode(DEGREES);
 }
 
 function draw() {
   clear();
   background(100);
-  push();
-  translate(width * 0.5, height * 0.5);
-  rotate(frameCount / -100.0);
-  star(0, 0, 3.5, 8.5, 5);
-  pop();
   game.draw();
+  push();
+  // translate(width * 0.5, height * 0.5);
+  // rotate(frameCount / -100.0);
+
+  // star(0, 0, 3.5, 8.5, 5);
+  pop();
 }
 
 function star(x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
-  let halfAngle = angle / 2.0;
+  let angle = (TWO_PI / npoints / PI) * 180;
+  let halfAngle = (angle / 2.0 / PI) * 180;
   fill("black");
+
   beginShape();
   for (let a = 0; a < TWO_PI; a += angle) {
     let sx = x + cos(a) * radius2;
@@ -33,3 +35,18 @@ function star(x, y, radius1, radius2, npoints) {
   }
   endShape(CLOSE);
 }
+
+/* function keyPressed() {
+  game.player.move();
+} */
+
+// window.addEventListener(
+//   "keydown",
+//   function(e) {
+//     // space and arrow keys
+//     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+//       e.preventDefault();
+//     }
+//   },
+//   false
+// );
