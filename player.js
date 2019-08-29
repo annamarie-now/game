@@ -18,9 +18,9 @@ class Player {
 
     fill("black");
     ellipse(0, 0, this.width, this.height);
-    if (this.width <= 40) {
+    if (this.width <= 30) {
       fill("red");
-    } else if (this.width > 70) {
+    } else if (this.width > 100) {
       fill((frameCount * 5) % 255);
     } else fill("white");
 
