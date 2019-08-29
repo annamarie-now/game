@@ -10,3 +10,20 @@
   background-color: red;
   display: none;
 }
+
+.youWon {
+  margin: auto;
+  text-align: center;
+  width: 700px;
+  height: 700px;
+  position: fixed;
+  color: red;
+  display: none;
+  vertical-align: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

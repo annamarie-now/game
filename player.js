@@ -8,6 +8,8 @@ class Player {
     this.width = 50;
     this.height = 50;
     this.angle = 0;
+    this.innerCicleX = 0;
+    this.innerCicleY = 0;
   }
 
   draw() {
@@ -20,11 +22,16 @@ class Player {
     ellipse(0, 0, this.width, this.height);
     if (this.width <= 30) {
       fill("red");
-    } else if (this.width > 100) {
+    } else if (this.width > 500) {
       fill((frameCount * 5) % 255);
     } else fill("white");
 
-    ellipse(0, 0 + 5, this.width - 10, this.height - 10);
+    ellipse(
+      this.innerCicleX,
+      this.innerCicleY,
+      this.width - 20,
+      this.height - 20
+    );
     pop();
 
     this.move();
@@ -36,18 +43,32 @@ class Player {
     //   this.angle = 0;
     // }
 
+    if (!keyIsDown(37) && !keyIsDown(38) && !keyIsDown(39) && !keyIsDown(40)) {
+      this.innerCicleX = 0;
+      this.innerCicleY = 0;
+    }
+
     if (keyIsDown(37)) {
-      this.angle += 3;
+      this.x -= this.speed;
+      this.innerCicleX = -10;
     }
 
     if (keyIsDown(38)) {
-      // this.angle = 3;
+      /*   // this.angle = 3;
       this.x -= sin(this.angle) * this.speed;
-      this.y += cos(this.angle) * this.speed;
+      this.y += cos(this.angle) * this.speed; */
+      this.y -= this.speed;
+      this.innerCicleY = -10;
+    }
+
+    if (keyIsDown(40)) {
+      this.y += this.speed;
+      this.innerCicleY = +10;
     }
 
     if (keyIsDown(39)) {
-      this.angle -= 3;
+      this.x += this.speed;
+      this.innerCicleX = +10;
     }
   }
   // if (keyIsDown(32)) {
@@ -86,7 +107,11 @@ class Player {
       return false;
     }
     if (this.width > goal.width || this.height > goal.height) return false;
-    document.querySelector(".start").style.display = "block";
+    this.x = goal.x;
+    this.y = goal.y;
+    this.width = 0;
+    this.height = 0;
+    document.querySelector(".youWon").style.display = "block";
 
     return true;
     // return: Player disappears, alert: You won!

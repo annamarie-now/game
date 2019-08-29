@@ -2,7 +2,9 @@ const game = new Game();
 let goal = new Goal();
 
 function setup() {
-  createCanvas(WIDTH, HEIGHT);
+  const cnv = createCanvas(WIDTH, HEIGHT);
+  cnv.parent("game");
+  //.center();
   game.setup();
   angleMode(DEGREES);
 }
