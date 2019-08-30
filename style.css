@@ -80,12 +80,12 @@ h2 {
 }
 
 .title{
-    font-family: "Syncopate", sans-serif;
+font-family: "Syncopate", sans-serif;
   color: #cccccc;
   font-size: 50px;
   display: flex;
   flex-direction: column;
-  /* font-weight: bolder; */
+  font-weight: lighter;
   margin-top: 20%;
   margin-left: 75px;
   letter-spacing: 40px;
@@ -116,6 +116,8 @@ a.button:hover {
     color:red;
 }
 #container{
+    font-family: "Syncopate", sans-serif;
+
     display: flex;
     width: 100%;
     flex-direction: column;
