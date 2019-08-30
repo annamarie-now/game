@@ -8,7 +8,7 @@ class Faster {
     this.randY = random(2, -2);
   }
   draw() {
-    fill(255);
+    fill("#5D5D5D");
     triangle(this.x, this.y, this.x + 10, this.y + 15, this.x + 20, this.y);
     //(10, 30, 19, 15, 30, 30);
 

@@ -8,7 +8,7 @@ class Minus {
     this.randY = random(2.5, -2.5);
   }
   draw() {
-    fill(255);
+    fill("#313131");
     rect(this.x, this.y, 15, 5);
     noStroke();
     this.move();

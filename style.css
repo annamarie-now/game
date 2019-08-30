@@ -2,28 +2,132 @@
   padding: 0;
   margin: 0;
 }
-
+/* 
 .start {
-  width: 700px;
-  height: 700px;
-  position: fixed;
-  background-color: red;
-  display: none;
-}
 
-.youWon {
+  position: fixed;
+  background-color:#494949;
+  font-family: "Syncopate", sans-serif;
+  color: red; */
+    /* display: none; */
+/* } */
+
+.youWin {
+  align-items: center;
   margin: auto;
+  margin-top: 15%;
   text-align: center;
   width: 700px;
   height: 700px;
   position: fixed;
   color: red;
-  display: none;
   vertical-align: center;
+  display: none;
 }
 
+.youLost{
+    align-items: center;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    width: 700px;
+    height: 700px;
+    position: fixed;
+    color: red;
+    vertical-align: center;
+    display: none;
+  }
+
+
 body {
+  /* padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%; */
+  /* background-color: lightgrey; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #191919;
+
+  /* box-shadow: 0inset 3 px 4 px 5 px black; */
 }
+
+canvas {
+  border: 20px solid #494949;
+  box-shadow: #494949;
+  /* background-color: #1d3557; */
+}
+.logo {
+  filter: invert(100%);
+  width: 810px;
+  height: auto;
+  color: #cccccc;
+}
+h1 {
+  font-family: "Syncopate", sans-serif;
+  color: #cccccc;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  margin-left: 75px;
+  letter-spacing: 70px;
+  text-align: center;
+}
+h2 {
+  font-family: "Syncopate", sans-serif;
+}
+
+.title{
+    font-family: "Syncopate", sans-serif;
+  color: #cccccc;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  /* font-weight: bolder; */
+  margin-top: 20%;
+  margin-left: 75px;
+  letter-spacing: 40px;
+  text-align: center;  
+}
+.playContainer{
+    text-align: center;
+}
+
+.button{
+    background-color: transparent !important;
+    display: inline-block;
+    cursor: pointer;
+    color:blue;
+    font-family: "Syncopate", sans-serif;
+    font-size: 3rem;
+    text-decoration: none;
+    /* border: 2px solid white; */
+    /* padding: 8px; */
+    /* margin-top: 60px; */
+    margin-top: 50px;
+    align-items: center;
+    display: absolute;
+
+}
+a.button:hover {
+    border-color: none;
+    color:red;
+}
+#container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 
+
+.start {
+  background: #494949;
+
+  position: fixed;
+  color: red;
+  vertical-align: center;
+  display: absolute;
+
+

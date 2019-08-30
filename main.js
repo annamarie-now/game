@@ -1,17 +1,26 @@
 const game = new Game();
 let goal = new Goal();
 
+function preload() {
+  mySound = loadSound("/assets/457187__papaninkasettratat__spicy-asian.mp3");
+}
+
 function setup() {
   const cnv = createCanvas(WIDTH, HEIGHT);
+  stroke("rgba(0,0,0,0.25)");
+  strokeWeight(4);
   cnv.parent("game");
   //.center();
   game.setup();
   angleMode(DEGREES);
+  mySound.setVolume(10);
+  mySound.loop();
+  // mySound.play();
 }
 
 function draw() {
   clear();
-  background(100);
+  background("#CCCCCC");
   game.draw();
   push();
   // translate(width * 0.5, height * 0.5);

@@ -10,27 +10,36 @@ class Player {
     this.angle = 0;
     this.innerCicleX = 0;
     this.innerCicleY = 0;
+    this.alive = true;
   }
 
   draw() {
+    if (this.alive !== true) return;
     push();
     // ellipse(mouseX, mouseY, this.width, this.height);
     translate(this.x, this.y);
     rotate(this.angle);
 
-    fill("black");
+    fill("blue");
     ellipse(0, 0, this.width, this.height);
-    if (this.width <= 30) {
+    if (this.width <= 25) {
       fill("red");
-    } else if (this.width > 500) {
+      this.width = 25;
+      this.height = 25;
+    } else if (this.width > 200) {
       fill((frameCount * 5) % 255);
-    } else fill("white");
+    } else fill("#256EFF");
+
+    if (this.width > 300) {
+      console.log("lost");
+      document.querySelector(".youLost").style.display = "block";
+    }
 
     ellipse(
       this.innerCicleX,
       this.innerCicleY,
-      this.width - 20,
-      this.height - 20
+      this.width - 15,
+      this.height - 15
     );
     pop();
 
@@ -43,14 +52,17 @@ class Player {
     //   this.angle = 0;
     // }
 
-    if (!keyIsDown(37) && !keyIsDown(38) && !keyIsDown(39) && !keyIsDown(40)) {
-      this.innerCicleX = 0;
+    if (!keyIsDown(38) && !keyIsDown(40)) {
       this.innerCicleY = 0;
+    }
+
+    if (!keyIsDown(37) && !keyIsDown(39)) {
+      this.innerCicleX = 0;
     }
 
     if (keyIsDown(37)) {
       this.x -= this.speed;
-      this.innerCicleX = -10;
+      this.innerCicleX = -7;
     }
 
     if (keyIsDown(38)) {
@@ -58,17 +70,17 @@ class Player {
       this.x -= sin(this.angle) * this.speed;
       this.y += cos(this.angle) * this.speed; */
       this.y -= this.speed;
-      this.innerCicleY = -10;
+      this.innerCicleY = -7;
     }
 
     if (keyIsDown(40)) {
       this.y += this.speed;
-      this.innerCicleY = +10;
+      this.innerCicleY = +7;
     }
 
     if (keyIsDown(39)) {
       this.x += this.speed;
-      this.innerCicleX = +10;
+      this.innerCicleX = +7;
     }
   }
   // if (keyIsDown(32)) {
@@ -109,9 +121,10 @@ class Player {
     if (this.width > goal.width || this.height > goal.height) return false;
     this.x = goal.x;
     this.y = goal.y;
-    this.width = 0;
-    this.height = 0;
-    document.querySelector(".youWon").style.display = "block";
+    this.alive = false;
+    // this.width = 0;
+    // this.height = 0;
+    document.querySelector(".youWin").style.display = "block";
 
     return true;
     // return: Player disappears, alert: You won!

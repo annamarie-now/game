@@ -11,7 +11,7 @@ class Game {
 
   setup() {
     // this.background.setup();
-    for (let i = 0; i <= 7; i++) {
+    for (let i = 0; i <= 5; i++) {
       this.minus.push(new Minus(Math.random() * WIDTH, Math.random() * HEIGHT));
     }
 
@@ -53,8 +53,8 @@ class Game {
           this.player.height = 20;
         } else {
           this.minus.splice(i, 1);
-          this.player.height -= 7;
-          this.player.width -= 7;
+          this.player.height -= 6.5;
+          this.player.width -= 6.5;
           this.minus.push(
             new Minus(Math.random() * WIDTH, Math.random() * HEIGHT)
           );

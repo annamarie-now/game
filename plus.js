@@ -15,7 +15,7 @@ class Plus {
     fill(255);
     rect(this.x, this.y, 15, 5);
     rect(this.x + 5, this.y - 5, 5, 15);
-    fill(255);
+    fill("black");
     noStroke();
     this.move();
     this.wallCollision();

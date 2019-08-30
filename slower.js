@@ -8,7 +8,7 @@ class Slower {
     this.randY = random(2, -2);
   }
   draw() {
-    fill(255);
+    fill("#959595");
     square(this.x, this.y, 15);
     noStroke();
     this.move();
