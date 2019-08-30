@@ -2,7 +2,7 @@ const game = new Game();
 let goal = new Goal();
 
 function preload() {
-  mySound = loadSound("/assets/457187__papaninkasettratat__spicy-asian.mp3");
+  mySound = loadSound("assets/457187__papaninkasettratat__spicy-asian.mp3");
 }
 
 function setup() {
